@@ -31,6 +31,39 @@
         /* Sabit menünün altında kalmasın */
         #anasayfa, #hakkimizda, #urunler, #iletisim { scroll-margin-top: 90px; }
 
+
+        /* Ürün isimleri: hover olmadan da görselin ortasında görünsün */
+        .single-gallery { position: relative; overflow: hidden; }
+        .single-gallery .portfolio-img { position: relative; }
+        .single-gallery .portfolio-img::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .35);
+            transition: opacity .3s ease;
+            pointer-events: none;
+        }
+        .single-gallery .product_label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 90%;
+            text-align: center;
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+            pointer-events: none;
+            transition: opacity .3s ease;
+        }
+        /* Hover'da kendi alanı açılacağı için sabit etiketi gizle */
+        .single-gallery:hover .product_label,
+        .single-gallery:hover .portfolio-img::after { opacity: 0; }
+        @media (max-width: 575px) { .single-gallery .product_label { font-size: 22px; } }
+
         /* Sağ alttaki WhatsApp butonu */
         .wa-float {
             position: fixed;
@@ -219,7 +252,7 @@
             <div class="row no-gutters align-items-center">
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_image">
-                        <img src="img/Explore/2.1.jpeg" alt="">
+                        <img src="img/Explore//2.1.jpeg" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
@@ -284,6 +317,7 @@
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
                             <img src="img/gallery/1.png" alt="Alüminyum">
+                            <span class="product_label">Alüminyum</span>
                         </div>
                         <div class="gallery_hover">
                             <a href="https://wa.me/905325739149?text=Merhaba%2C%20Al%C3%BCminyum%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hover_inner">
@@ -297,6 +331,7 @@
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
                             <img src="img/gallery/2.png" alt="Pirinç">
+                            <span class="product_label">Pirinç</span>
                         </div>
                         <div class="gallery_hover">
                             <a href="https://wa.me/905325739149?text=Merhaba%2C%20Pirin%C3%A7%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hover_inner">
@@ -310,6 +345,7 @@
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
                             <img src="img/gallery/3.png" alt="Bakır">
+                            <span class="product_label">Bakır</span>
                         </div>
                         <div class="gallery_hover">
                             <a href="https://wa.me/905325739149?text=Merhaba%2C%20Bak%C4%B1r%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hover_inner">
@@ -323,6 +359,7 @@
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
                             <img src="img/gallery/4.png" alt="Sanayi Plastikleri">
+                            <span class="product_label">Sanayi Plastikleri</span>
                         </div>
                         <div class="gallery_hover">
                             <a href="https://wa.me/905325739149?text=Merhaba%2C%20Sanayi%20Plastikleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hover_inner">
@@ -336,6 +373,7 @@
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
                             <img src="img/gallery/5.png" alt="Bronz">
+                            <span class="product_label">Bronz</span>
                         </div>
                         <div class="gallery_hover">
                             <a href="https://wa.me/905325739149?text=Merhaba%2C%20Bronz%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="hover_inner">
@@ -364,7 +402,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="project_info text-center">
-                        <h3>Bizimle İletişime Geçin</h3>
+                        <h3>Projeniz İçin Bizimle İletişime Geçin</h3>
                         <p>
                             Ürünlerimiz ve çözümlerimiz hakkında detaylı bilgi almak için
                             <br>

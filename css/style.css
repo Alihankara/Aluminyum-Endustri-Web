@@ -1374,6 +1374,30 @@ h3 {
   width: 100%;
 }
 
+@media (min-width: 992px) {
+    .about_image {
+        padding: 50px;
+    }
+
+    .about_image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 992px) {
+    .about_image {
+        padding: 10px;
+    }
+
+    .about_image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
 /* line 7, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
 .about_area .about_info {
   padding-left: 68px;
